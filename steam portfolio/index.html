@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steam UI · Portfolio</title>
+  <!-- Separate CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="steam-portfolio">
+    <!-- Top Bar -->
+    <header class="steam-topbar">
+      <div class="steam-logo">
+        <span>🎮</span> STEAM PORTFOLIO
+      </div>
+      <nav class="steam-nav">
+        <a href="#" class="active">Profile</a>
+        <a href="#">Games</a>
+        <a href="#">Screenshots</a>
+        <a href="#">Workshop</a>
+      </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-header">
+      <div class="avatar">👾</div>
+      <div class="profile-info">
+        <h1>Rommel Jr "Maro" Marcelo</h1>
+        <span class="steam-badge">🟢 Online · Level 42</span>
+        <p class="profile-bio">Game developer · UI/UX designer · Indie game enthusiast</p>
+        <a href="#" class="steam-button">✏️ Edit Profile</a>
+      </div>
+    </section>
+
+    <!-- Games Grid -->
+    <h2 style="color: #8ab8e6; margin: 30px 0 10px 0; font-weight: 300; letter-spacing: 1px;">
+      🎯 Featured Projects
+    </h2>
+    <div class="games-grid" id="gamesContainer">
+      <!-- Cards will be injected by JS -->
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a3c4c; text-align: center; color: #6a8ca0; font-size: 13px;">
+      Steam Portfolio · 2026 · Built with 🖤
+    </footer>
+  </div>
+
+  <!-- Separate JS file -->
+  <script src="script.js"></script>
+</body>
+</html>

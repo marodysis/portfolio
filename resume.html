@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rommel Jr Marcelo · Resume</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f0f1a;
+      color: #2d2d3a;
+      line-height: 1.6;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* ========================================
+       RESUME PAPER
+       ======================================== */
+    .resume {
+      max-width: 850px;
+      width: 100%;
+      background: #ffffff;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+    .resume-header {
+      background: linear-gradient(135deg, #2d1b4e 0%, #4a2a7a 100%);
+      color: #ffffff;
+      padding: 40px 48px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resume-header::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(200, 160, 240, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- Photo ---------- */
+    .resume-photo {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #c8a0f0;
+      box-shadow: 0 0 0 3px rgba(200, 160, 240, 0.2);
+      flex-shrink: 0;
+    }
+
+    .header-left h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .header-left .role {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #c8a0f0;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .header-left .tagline {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      font-weight: 300;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.9;
+      min-width: 200px;
+    }
+
+    .header-right a {
+      color: #c8a0f0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-right a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .header-right .contact-line {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .header-right .icon {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    /* ========================================
+       BODY
+       ======================================== */
+    .resume-body {
+      padding: 36px 48px 48px;
+    }
+
+    /* ========================================
+       SECTIONS
+       ======================================== */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #4a2a7a;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #e8e4f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 14px;
+      background: #6a3aaa;
+      border-radius: 2px;
+    }
+
+    /* ---------- Summary ---------- */
+    .summary {
+      font-size: 0.9rem;
+      color: #4a4a5a;
+      line-height: 1.75;
+    }
+
+    /* ---------- Entries ---------- */
+    .entry {
+      margin-bottom: 20px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a2a;
+    }
+
+    .entry-subtitle {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #6a3aaa;
+      margin-bottom: 2px;
+    }
+
+    .entry-date {
+      font-size: 0.78rem;
+      color: #8a8a9a;
+      font-weight: 400;
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+
+    .entry-meta {
+      font-size: 0.8rem;
+      color: #7a7a8a;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .entry-desc {
+      font-size: 0.85rem;
+      color: #4a4a5a;
+      line-height: 1.7;
+    }
+
+    /* ---------- Bullet list ---------- */
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin-top: 6px;
+    }
+
+    .bullets li {
+      font-size: 0.85rem;
+      color: #4a4a5a;
+      line-height: 1.7;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #6a3aaa;
+      font-weight: 700;
+    }
+
+    /* ---------- Skills ---------- */
+    .skills-group {
+      margin-bottom: 14px;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4a2a7a;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #3d2b5a;
+      background: #f2eefa;
+      border: 1px solid #ddd4f0;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    /* ---------- Certifications ---------- */
+    .cert-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cert-list li {
+      font-size: 0.85rem;
+      color: #4a4a5a;
+      padding: 8px 0 8px 24px;
+      position: relative;
+      border-bottom: 1px dashed #e8e4f0;
+      line-height: 1.6;
+    }
+
+    .cert-list li:last-child {
+      border-bottom: none;
+    }
+
+    .cert-list li::before {
+      content: '🏅';
+      position: absolute;
+      left: 0;
+      font-size: 0.85rem;
+      top: 8px;
+    }
+
+    .cert-link {
+      color: #6a3aaa;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-left: 8px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .cert-link::after {
+      content: ' ↗';
+      font-size: 0.65rem;
+    }
+
+    .cert-link:hover {
+      opacity: 1;
+      color: #4a2a7a;
+      text-decoration: underline;
+    }
+
+    /* ---------- Testimonial ---------- */
+    .testimonial {
+      background: #f8f6fc;
+      border-left: 3px solid #6a3aaa;
+      padding: 14px 18px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .testimonial p {
+      font-size: 0.85rem;
+      color: #3d2b5a;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .testimonial .author {
+      font-size: 0.78rem;
+      color: #6a3aaa;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .testimonial .author-title {
+      font-size: 0.72rem;
+      color: #8a8a9a;
+      font-weight: 400;
+      font-style: normal;
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* ---------- Project links ---------- */
+    .project-links {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-links a {
+      font-size: 0.75rem;
+      color: #6a3aaa;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+
+    .project-links a:hover {
+      color: #4a2a7a;
+      text-decoration: underline;
+    }
+
+    /* ========================================
+       ACTIONS (print / back)
+       ======================================== */
+    .resume-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      padding: 24px 48px 32px;
+      background: #f8f6fc;
+      border-top: 1px solid #e8e4f0;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .action-btn.primary {
+      background: #4a2a7a;
+      color: #ffffff;
+    }
+
+    .action-btn.primary:hover {
+      background: #6a3aaa;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(106, 58, 170, 0.35);
+    }
+
+    .action-btn.secondary {
+      background: transparent;
+      color: #4a2a7a;
+      border: 2px solid #d0c8e0;
+    }
+
+    .action-btn.secondary:hover {
+      background: #f2eefa;
+      border-color: #6a3aaa;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 700px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .resume-header {
+        padding: 28px 24px 24px;
+      }
+
+      .header-content {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .resume-photo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .header-right {
+        text-align: left;
+        min-width: auto;
+      }
+
+      .header-right .contact-line {
+        justify-content: flex-start;
+      }
+
+      .header-left h1 {
+        font-size: 1.5rem;
+      }
+
+      .resume-body {
+        padding: 24px 20px 32px;
+      }
+
+      .resume-actions {
+        padding: 16px 20px 20px;
+        flex-direction: column;
+      }
+
+      .action-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .entry-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .entry-date {
+        margin-bottom: 4px;
+      }
+
+      .cert-link {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+    }
+
+    /* ========================================
+       PRINT / PDF
+       ======================================== */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        display: block;
+      }
+
+      .resume {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+      }
+
+      .resume-actions {
+        display: none !important;
+      }
+
+      .resume-header {
+        background: #2d1b4e !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .header-left h1,
+      .header-left .role,
+      .header-left .tagline,
+      .header-right,
+      .header-right a {
+        color: #ffffff !important;
+      }
+
+      .header-left .role {
+        color: #c8a0f0 !important;
+      }
+
+      .header-right a {
+        color: #e0c8ff !important;
+      }
+
+      .resume-photo {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .section-title {
+        color: #4a2a7a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .section-title::before {
+        background: #6a3aaa !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .entry-subtitle,
+      .testimonial .author,
+      .cert-link,
+      .project-links a {
+        color: #4a2a7a !important;
+      }
+
+      .skill-tag {
+        background: #f2eefa !important;
+        border-color: #ddd4f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .testimonial {
+        background: #f8f6fc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .resume-body {
+        padding: 24px 36px;
+      }
+
+      .section {
+        page-break-inside: avoid;
+      }
+
+      .entry {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+    <div class="resume-header">
+      <div class="header-content">
+        <img src="ako.jpg" alt="Rommel Jr Marcelo" class="resume-photo">
+        <div class="header-left">
+          <h1>Rommel Jr Marcelo</h1>
+          <div class="role">Multi-Stack Developer · System Analyst</div>
+          <div class="tagline">4th Year BS Information Technology Student</div>
+        </div>
+        <div class="header-right">
+          <div class="contact-line">
+            <span class="icon">✉</span>
+            <a href="mailto:rommelmarcelojr@gmail.com">rommelmarcelojr@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="icon">☎</span>
+            <a href="tel:+639050469726">0905 046 9726</a>
+          </div>
+          <div class="contact-line">
+            <span class="icon">⌥</span>
+            <a href="https://github.com/marodysis" target="_blank" rel="noopener noreferrer">github.com/marodysis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         BODY
+         ======================================== -->
+    <div class="resume-body">
+
+      <!-- SUMMARY -->
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary">
+          Multi-stack developer and system thinker with hands-on experience designing and building complete systems — from analysis and documentation to working applications. Comfortable across Android, desktop, and web platforms. Focused on clean architecture, database design, and a polished user experience.
+        </p>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+          <div class="entry-header">
+            <div>
+              <div class="entry-title">Bachelor of Science in Information Technology</div>
+              <div class="entry-subtitle">College of Our Lady of Mercy of Pulilan Foundation, Inc.</div>
+            </div>
+            <div class="entry-date">2022 — Present</div>
+          </div>
+          <div class="entry-meta">4th Year Student</div>
+          <div style="margin-top: 6px;">
+            <div style="font-size: 0.75rem; font-weight: 600; color: #4a2a7a; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Relevant Coursework</div>
+            <div class="skills-list">
+              <span class="skill-tag">Database Management Systems</span>
+              <span class="skill-tag">System Analysis &amp; Design</span>
+              <span class="skill-tag">Mobile Networking &amp; Communications</span>
+              <span class="skill-tag">Application Development</span>
+              <span class="skill-tag">Software Engineering</span>
+              <span class="skill-tag">Information Assurance &amp; Security</span>
+              <span class="skill-tag">Human-Computer Interaction</span>
+              <span class="skill-tag">Operating Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">PHAQS — System Analysis &amp; Design</div>
+            <div class="entry-date">2025</div>
+          </div>
+          <div class="entry-subtitle">System Analysis · Documentation · Repository</div>
+          <ul class="bullets">
+            <li>Performed full system analysis and design documentation</li>
+            <li>Produced requirements, use cases, and architectural diagrams</li>
+            <li>Deployed a live demo on Vercel</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/marodysis/PHAQS" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+            <a href="https://phaqs.vercel.app/patient/index.html" target="_blank" rel="noopener noreferrer">↗ Live Demo</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Daily Expense Tracker — Android App</div>
+            <div class="entry-date">2025</div>
+          </div>
+          <div class="entry-subtitle">Kotlin · Jetpack Compose · Firebase Firestore · Gradle</div>
+          <ul class="bullets">
+            <li>Built a full Android expense tracking app with Jetpack Compose UI</li>
+            <li>Integrated Firebase Firestore for cloud NoSQL data storage</li>
+            <li>Implemented app logic, UI, and data handling in Kotlin</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Food &amp; Table Reservation System — Desktop App</div>
+            <div class="entry-date">2025</div>
+          </div>
+          <div class="entry-subtitle">C# · WinForms · .NET · SQL</div>
+          <ul class="bullets">
+            <li>Developed a Windows Forms desktop reservation system</li>
+            <li>Designed SQL database schema for tables, reservations, and users</li>
+            <li>Implemented reservation logic and CRUD operations</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/marodysis/Food-and-Table-Reservation-System" target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- TECHNICAL SKILLS -->
+      <div class="section">
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skills-group">
+          <div class="skills-label">Languages &amp; Frameworks</div>
+          <div class="skills-list">
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">Jetpack Compose</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">WinForms</span>
+            <span class="skill-tag">.NET</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-label">Database &amp; Cloud</div>
+          <div class="skills-list">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Firebase Firestore</span>
+            <span class="skill-tag">Database Design</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-label">Tools &amp; Practices</div>
+          <div class="skills-list">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Gradle</span>
+            <span class="skill-tag">System Analysis &amp; Design</span>
+            <span class="skill-tag">XML</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <ul class="cert-list">
+          <li>
+            Wadhwani Foundation — Certificate of Completion
+            <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=69d4b5bed69240c3ae26830b" target="_blank" rel="noopener noreferrer" class="cert-link">Verify credential</a>
+          </li>
+          <li>
+            Robotics Training &amp; Workshop — Certificate of Participation
+            <a href="https://drive.google.com/file/d/1WF9W-3NiFC7obZXS7oX8aE5i8yXwOUl8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">View credential</a>
+          </li>
+          <li>
+            PSITE Hackathon 2026 — Certificate of Participation
+            <a href="https://drive.google.com/file/d/1A5ger_Mm-PALk2hQpnf772S6oZDizGaS/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">View credential</a>
+          </li>
+          <li>
+            NC II · Computer Systems Servicing (TESDA)
+            <a href="https://drive.google.com/file/d/1bsDayQw4g66zXpPXiR8IJhlSqJ80F3XN/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-link">View credential</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- TESTIMONIAL -->
+      <div class="section">
+        <div class="section-title">Testimonial</div>
+        <div class="testimonial">
+          <p>"A dedicated and hardworking student with strong analytical skills and a genuine passion for building systems."</p>
+          <div class="author">
+            Joseph Jay A. Vicente
+            <span class="author-title">Dean, BS Information Technology · College of Our Lady of Mercy of Pulilan Foundation, Inc.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================
+         ACTIONS
+         ======================================== -->
+    <div class="resume-actions">
+      <button class="action-btn primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <a href="index.html" class="action-btn secondary">← Back to Portfolio</a>
+    </div>
+  </div>
+</body>
+</html>

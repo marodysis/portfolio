@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 32-Bit Portfolio · Start</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="splash.css">
+</head>
+<body>
+  <!-- Castle Background -->
+  <div class="wizard-bg">
+    <div class="castle-scene">
+      <!-- Stars -->
+      <div class="stars"></div>
+      
+      <!-- Moon -->
+      <div class="moon"></div>
+      
+      <!-- Mountains -->
+      <div class="mountains"></div>
+      
+      <!-- Castle -->
+      <div class="castle">
+        <div class="castle-body">
+          <div class="castle-wall"></div>
+          <div class="castle-tower tower-left"></div>
+          <div class="castle-tower tower-right"></div>
+          <div class="castle-tower tower-center"></div>
+          <div class="castle-gate"></div>
+          <div class="castle-window window1"></div>
+          <div class="castle-window window2"></div>
+          <div class="castle-window window3"></div>
+          <div class="castle-window window4"></div>
+          <div class="castle-banner banner-left"></div>
+          <div class="castle-banner banner-right"></div>
+        </div>
+      </div>
+      
+      <!-- Ground -->
+      <div class="ground"></div>
+      
+      <!-- Fireflies (pixel particles) -->
+      <div class="fireflies-container" id="firefliesContainer"></div>
+    </div>
+  </div>
+
+  <div class="splash-container">
+    <!-- Main content -->
+    <div class="splash-content">
+      <!-- Logo / Title with pixel art -->
+      <div class="logo-container">
+        <div class="pixel-avatar">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2335385a'/%3E%3Crect x='8' y='8' width='12' height='12' fill='%23f7f2b0'/%3E%3Crect x='44' y='8' width='12' height='12' fill='%23f7f2b0'/%3E%3Crect x='20' y='24' width='24' height='16' fill='%23f7f2b0'/%3E%3Crect x='12' y='40' width='8' height='12' fill='%23b7bbdd'/%3E%3Crect x='44' y='40' width='8' height='12' fill='%23b7bbdd'/%3E%3Crect x='28' y='48' width='8' height='8' fill='%239da1cf'/%3E%3C/svg%3E" 
+               alt="pixel avatar" width="80" height="80">
+        </div>
+        <h1 class="game-title">🏰 ARCANE</h1>
+        <h2 class="game-subtitle">PORTFOLIO</h2>
+        <div class="pixel-hr"></div>
+        <p class="version-text">◈ 32-BIT EDITION ◈</p>
+      </div>
+
+      <!-- START Button -->
+      <button class="start-btn" id="startBtn">
+        ▶ START
+      </button>
+
+      <!-- Footer with controls hint -->
+      <div class="controls-hint">
+        <span>⬆ ⬇ ⬅ ➡</span>
+        <span style="font-size: 0.45rem; margin-top: 8px;">press START to enter</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="splash.js"></script>
+</body>
+</html>

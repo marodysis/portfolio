@@ -1,0 +1,584 @@
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', monospace;
+  overflow: hidden;
+  position: relative;
+  background: #0a0618;
+}
+
+/* ---------- CASTLE BACKGROUND ---------- */
+.wizard-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: linear-gradient(180deg, #0a0618 0%, #1a0a30 30%, #2d1b4e 50%, #1a0a30 70%, #0a0618 100%);
+}
+
+.castle-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+    radial-gradient(2px 2px at 50px 160px, #ddd, transparent),
+    radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+    radial-gradient(2px 2px at 130px 80px, #fff, transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent),
+    radial-gradient(2px 2px at 200px 120px, #eee, transparent),
+    radial-gradient(2px 2px at 250px 50px, #fff, transparent),
+    radial-gradient(2px 2px at 300px 90px, #ddd, transparent),
+    radial-gradient(2px 2px at 350px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 400px 140px, #fff, transparent),
+    radial-gradient(2px 2px at 450px 60px, #ddd, transparent),
+    radial-gradient(2px 2px at 500px 100px, #eee, transparent),
+    radial-gradient(2px 2px at 550px 40px, #fff, transparent),
+    radial-gradient(2px 2px at 600px 130px, #ddd, transparent),
+    radial-gradient(2px 2px at 650px 70px, #eee, transparent),
+    radial-gradient(2px 2px at 700px 110px, #fff, transparent),
+    radial-gradient(2px 2px at 750px 50px, #ddd, transparent),
+    radial-gradient(2px 2px at 800px 120px, #eee, transparent);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.6;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  top: 8%;
+  right: 15%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 35% 35%, #f0e8c8, #d4c8a0);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(200, 180, 150, 0.3), 0 0 120px rgba(200, 180, 150, 0.1);
+}
+
+.moon::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 12px;
+  height: 12px;
+  background: rgba(180, 160, 130, 0.3);
+  border-radius: 50%;
+  box-shadow: 20px 15px 0 5px rgba(180, 160, 130, 0.2);
+}
+
+/* Mountains */
+.mountains {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: 
+    polygon(0% 100%, 5% 60%, 15% 70%, 25% 40%, 35% 65%, 45% 30%, 55% 55%, 65% 20%, 75% 50%, 85% 35%, 95% 55%, 100% 40%, 100% 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: #1a0a30;
+  opacity: 0.5;
+}
+
+/* Castle */
+.castle {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 250px;
+}
+
+.castle-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Main wall */
+.castle-wall {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  background: #4a3a6a;
+  border-top: 4px solid #6a4a8a;
+  border-left: 4px solid #3a2a5a;
+  border-right: 4px solid #3a2a5a;
+  box-shadow: inset 0 -20px 0 #3a2a5a;
+}
+
+/* Towers */
+.castle-tower {
+  position: absolute;
+  bottom: 20px;
+  width: 40px;
+  height: 100px;
+  background: #4a3a6a;
+  border-top: 4px solid #6a4a8a;
+  border-left: 4px solid #3a2a5a;
+  border-right: 4px solid #3a2a5a;
+}
+
+.tower-left {
+  left: 50px;
+}
+
+.tower-right {
+  right: 50px;
+}
+
+.tower-center {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 130px;
+  bottom: 20px;
+}
+
+/* Tower tops (crenellations) */
+.castle-tower::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: 20px;
+  background: #4a3a6a;
+  border-top: 4px solid #6a4a8a;
+  border-left: 4px solid #3a2a5a;
+  border-right: 4px solid #3a2a5a;
+}
+
+.castle-tower::after {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 4px;
+  width: 8px;
+  height: 16px;
+  background: #4a3a6a;
+  box-shadow: 
+    12px 0 0 0 #4a3a6a,
+    24px 0 0 0 #4a3a6a;
+}
+
+.tower-left::after {
+  box-shadow: 
+    8px 0 0 0 #4a3a6a,
+    16px 0 0 0 #4a3a6a,
+    24px 0 0 0 #4a3a6a;
+}
+
+.tower-right::after {
+  box-shadow: 
+    8px 0 0 0 #4a3a6a,
+    16px 0 0 0 #4a3a6a,
+    24px 0 0 0 #4a3a6a;
+}
+
+/* Castle gate */
+.castle-gate {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 50px;
+  background: #2a1a3a;
+  border-radius: 20px 20px 0 0;
+  border: 4px solid #3a2a5a;
+  border-bottom: none;
+  z-index: 2;
+}
+
+.castle-gate::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 30px;
+  background: #1a0a20;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Castle windows */
+.castle-window {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  background: #6a4a8a;
+  border: 2px solid #3a2a5a;
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px rgba(200, 160, 255, 0.2);
+}
+
+.window1 { top: 30px; left: 30%; }
+.window2 { top: 30px; right: 30%; }
+.window3 { top: 60px; left: 25%; }
+.window4 { top: 60px; right: 25%; }
+
+/* Castle banners */
+.castle-banner {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 30px;
+  background: #6a2a4a;
+  border: 2px solid #4a1a3a;
+  animation: waveBanner 2s ease-in-out infinite alternate;
+}
+
+.banner-left {
+  left: 30px;
+  transform-origin: top;
+}
+
+.banner-right {
+  right: 30px;
+  transform-origin: top;
+  animation-delay: 0.5s;
+}
+
+@keyframes waveBanner {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+.banner-left::after {
+  content: '⚜';
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  font-size: 10px;
+  color: #c8a0d0;
+}
+
+.banner-right::after {
+  content: '⚜';
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  font-size: 10px;
+  color: #c8a0d0;
+}
+
+/* Ground */
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: linear-gradient(180deg, #1a0a30 0%, #0d0620 100%);
+}
+
+.ground::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(180deg, transparent, #1a0a30);
+}
+
+/* ---------- FIREFLIES (PIXEL PARTICLES) ---------- */
+.fireflies-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 220, 100, 0.8);
+  box-shadow: 0 0 10px rgba(255, 220, 100, 0.4), 0 0 20px rgba(255, 200, 80, 0.2);
+  border-radius: 50%;
+  animation: fireflyFloat linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes fireflyFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-10px, -50px) scale(0.8);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(15px, -20px) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-5px, -40px) scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* ---------- SPLASH CONTAINER ---------- */
+.splash-container {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(10, 6, 24, 0.6);
+  border: 8px solid #4a2a7a;
+  box-shadow: 0 0 0 4px #2d1b4e, 0 16px 0 4px #0a0618, inset 0 0 60px rgba(120, 60, 200, 0.05);
+  backdrop-filter: blur(2px);
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.splash-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Logo section */
+.logo-container {
+  margin-bottom: 40px;
+}
+
+.pixel-avatar {
+  display: inline-block;
+  background: rgba(10, 6, 24, 0.8);
+  border: 6px solid #4a2a7a;
+  padding: 12px;
+  box-shadow: inset 0 0 0 3px #6a3aaa, 0 0 30px rgba(120, 60, 200, 0.15);
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.pixel-avatar img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+}
+
+.game-title {
+  font-size: 2.8rem;
+  color: #c8a0f0;
+  text-shadow: 0 0 20px rgba(160, 100, 255, 0.2), 4px 4px 0 #0a0618;
+  letter-spacing: 0.2em;
+  margin-bottom: -5px;
+}
+
+.game-subtitle {
+  font-size: 1.8rem;
+  color: #a070d0;
+  text-shadow: 0 0 15px rgba(160, 100, 255, 0.15), 4px 4px 0 #0a0618;
+  letter-spacing: 0.3em;
+  margin-bottom: 15px;
+}
+
+.pixel-hr {
+  width: 200px;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #6a3aaa 0px, #6a3aaa 6px, #0a0618 6px, #0a0618 12px);
+  margin: 15px auto;
+  image-rendering: pixelated;
+}
+
+.version-text {
+  font-size: 0.55rem;
+  color: #8a6aba;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px rgba(120, 60, 200, 0.1);
+}
+
+/* ---------- START BUTTON ---------- */
+.start-btn {
+  background: #4a2a7a;
+  border: 6px solid #0a0618;
+  padding: 18px 50px;
+  font-size: 1.2rem;
+  color: #c8a0f0;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: inset -4px -4px 0 #2d1b4e, inset 4px 4px 0 #6a3aaa, 0 0 30px rgba(120, 60, 200, 0.1);
+  transition: all 0.1s linear;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(200, 160, 240, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.start-btn:hover {
+  background: #5a3a9a;
+  transform: scale(1.05);
+  box-shadow: inset -5px -5px 0 #2d1b4e, inset 5px 5px 0 #8a5aba, 0 0 50px rgba(120, 60, 200, 0.2);
+}
+
+.start-btn:hover::before {
+  opacity: 1;
+}
+
+.start-btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 5px 5px 0 #2d1b4e, inset -5px -5px 0 #6a3aaa;
+}
+
+.start-btn {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: inset -4px -4px 0 #2d1b4e, inset 4px 4px 0 #6a3aaa, 0 0 20px rgba(120, 60, 200, 0.15); 
+  }
+  50% { 
+    box-shadow: inset -4px -4px 0 #2d1b4e, inset 4px 4px 0 #6a3aaa, 0 0 40px rgba(160, 100, 255, 0.25); 
+  }
+}
+
+/* ---------- CONTROLS HINT ---------- */
+.controls-hint {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6a3aaa;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+}
+
+.controls-hint span:first-child {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: #8a6aba;
+}
+
+/* ---------- TRANSITION ANIMATION ---------- */
+.splash-container.transitioning {
+  animation: screenShrink 0.6s ease-in forwards;
+}
+
+@keyframes screenShrink {
+  0% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .splash-container {
+    height: 500px;
+    margin: 20px;
+  }
+  
+  .game-title {
+    font-size: 2rem;
+  }
+  
+  .game-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .start-btn {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+  
+  .pixel-avatar img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .castle {
+    transform: translateX(-50%) scale(0.6);
+  }
+  
+  .moon {
+    width: 40px;
+    height: 40px;
+  }
+}

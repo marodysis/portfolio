@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 Rommel Jr Marcelo · Portfolio</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Castle Background with Fireflies -->
+  <div class="wizard-bg">
+    <div class="castle-scene">
+      <div class="stars"></div>
+      <div class="moon"></div>
+      <div class="mountains"></div>
+      <div class="castle">
+        <div class="castle-body">
+          <div class="castle-wall"></div>
+          <div class="castle-tower tower-left"></div>
+          <div class="castle-tower tower-right"></div>
+          <div class="castle-tower tower-center"></div>
+          <div class="castle-gate"></div>
+          <div class="castle-window window1"></div>
+          <div class="castle-window window2"></div>
+          <div class="castle-window window3"></div>
+          <div class="castle-window window4"></div>
+          <div class="castle-banner banner-left"></div>
+          <div class="castle-banner banner-right"></div>
+        </div>
+      </div>
+      <div class="ground"></div>
+      <div class="fireflies-container" id="firefliesContainer"></div>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle">🌙 Night Mode</button>
+
+  <div class="pixel-portfolio">
+    <!-- Header -->
+    <div class="header-grid">
+      <div class="avatar-box">
+        <img src="ako.jpg" alt="Rommel Jr Marcelo" width="96" height="96">
+      </div>
+      <div class="title-block">
+        <h1>⚡ ROMMEL JR · MARCELO</h1>
+        <div class="subtitle typing-text">▶ </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-panel">
+      <div class="stat-item"><span class="label">❤️ HP</span><span class="value">100/100</span></div>
+      <div class="stat-item"><span class="label">⚡ XP</span><span class="value" id="xpValue">lv. 8</span></div>
+      <div class="stat-item"><span class="label">📅 since</span><span class="value">2026</span></div>
+      <div class="stat-item"><span class="label">🎯 main</span><span class="value">multi‑stack</span></div>
+      <button class="pixel-btn" id="levelUpBtn">⬆ level up</button>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="content-grid">
+      <!-- LEFT: About with SCROLL PAPER -->
+      <div class="pixel-card" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+        <div class="scroll-container">
+          <div class="scroll-texture"></div>
+          <div class="ink-stain"></div>
+          <div class="ink-stain"></div>
+          <div class="pixel-deco-scroll tl"></div>
+          <div class="pixel-deco-scroll tr"></div>
+          <div class="pixel-deco-scroll bl"></div>
+          <div class="pixel-deco-scroll br"></div>
+          <div class="scroll-edge top"></div>
+          <div class="scroll-edge bottom"></div>
+          
+          <div class="scroll-text">
+            <h2>🧙 ABOUT ROMMEL JR MARCELO</h2>
+            <p>Multi-stack developer &amp; system thinker. I design and build complete systems — from analysis and documentation to working applications. My work spans Android, desktop, and web, always with a focus on clean architecture and a polished user experience.</p>
+            
+            <div style="margin: 16px 0 8px;">
+              <span style="font-size:0.6rem; color: #6b5a3a;">⚔️ ARCANE SKILLS</span>
+            </div>
+            <ul>
+              <li>System Analysis &amp; Design (SAD)</li>
+              <li>Kotlin · Jetpack Compose · Firebase</li>
+              <li>C# · WinForms · .NET · SQL</li>
+              <li>HTML / CSS / JavaScript</li>
+              <li>Database &amp; cloud integration</li>
+            </ul>
+
+            <div style="margin: 16px 0 8px;">
+              <span style="font-size:0.6rem; color: #6b5a3a;">📜 QUEST LOG</span>
+            </div>
+            <ul>
+              <li>PHAQS — system analysis &amp; design</li>
+              <li>Expense Tracker — Android / Kotlin app</li>
+              <li>Food &amp; Table — C# desktop system</li>
+            </ul>
+            
+            <div style="margin-top: 15px; text-align: right; font-size: 0.4rem; color: #8b7355;">
+              <span>✦ sealed with magic ✦</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Projects + Pixel Art Canvas -->
+      <div class="pixel-card">
+        <h2>🕹️ PROJECTS</h2>
+        
+        <!-- PHAQS Repository -->
+        <div class="project-item github-project project-sad">
+          <div style="display: flex; justify-content: space-between; align-items: start; gap: 8px;">
+            <div style="flex: 1;">
+              <h3>🔹 PHAQS</h3>
+              <p>System Analysis and Design · project repository</p>
+              <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+                <span class="tech-tag">SAD</span>
+                <span class="tech-tag">Repository</span>
+                <span class="tech-tag">GitHub</span>
+              </div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;">
+                <a href="https://github.com/marodysis/PHAQS" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="pixel-btn github-link" 
+                   style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                  <span>🐙</span> View Repo
+                </a>
+                <a href="https://phaqs.vercel.app/patient/index.html" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="pixel-btn live-demo-link" 
+                   style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                  <span>🚀</span> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Expense Tracker App -->
+        <div class="project-item github-project project-android">
+          <div style="display: flex; justify-content: space-between; align-items: start; gap: 8px;">
+            <div style="flex: 1;">
+              <h3>🔹 DAILY EXPENSE TRACKER</h3>
+              <p>expense tracking app · android</p>
+              <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">Jetpack Compose</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">XML</span>
+                <span class="tech-tag">Gradle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Food and Table Reservation System -->
+        <div class="project-item github-project project-desktop">
+          <div style="display: flex; justify-content: space-between; align-items: start; gap: 8px;">
+            <div style="flex: 1;">
+              <h3>🔹 FOOD &amp; TABLE RESERVATION</h3>
+              <p>restaurant reservation system · desktop app</p>
+              <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">WinForms</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">.NET</span>
+              </div>
+              <a href="https://github.com/marodysis/Food-and-Table-Reservation-System" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="pixel-btn github-link" 
+                 style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px;">
+                <span>🐙</span> View Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 8px;">
+          <span class="pixel-deco"></span>
+          <span style="font-size:0.5rem; color:#8a6aba;">more on github</span>
+        </div>
+
+        <!-- PIXEL ART CANVAS -->
+        <div style="margin-top: 20px; border-top: 2px dotted #3a1a5a; padding-top: 15px;">
+          <h2 style="font-size:0.7rem; margin-top: 0;">🎨 PIXEL STUDIO</h2>
+          <canvas id="pixelCanvas" width="160" height="160" style="image-rendering: pixelated; border: 3px solid #4a2a7a; background: #1a0a30; width: 100%; max-width: 160px; display: block; margin: 10px auto;"></canvas>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
+            <button class="pixel-btn" id="clearCanvas" style="font-size:0.35rem; padding: 4px 10px;">🧹 Clear</button>
+            <button class="pixel-btn" id="randomArt" style="font-size:0.35rem; padding: 4px 10px;">🎲 Random</button>
+            <input type="color" id="pixelColor" value="#c8a0f0" style="background: transparent; border: 2px solid #4a2a7a; width: 28px; height: 28px; padding: 2px; cursor: pointer;">
+            <button class="pixel-btn" id="exportArt" style="font-size:0.35rem; padding: 4px 10px;">💾 Save</button>
+          </div>
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 6px; font-size:0.3rem; color:#6a3aaa;">
+            <span>🖱️ Click to draw</span>
+            <span>|</span>
+            <span>🔁 Right-click to erase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CERTIFICATIONS SECTION ========== -->
+    <div class="pixel-card certificate-card" style="margin-top: 20px;">
+      <h2>🏅 CERTIFICATIONS</h2>
+      
+      <!-- Wadhwani Foundation Certificate -->
+      <div class="certificate-item cert-wadhwani">
+        <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h3>📜 WADHWANI FOUNDATION</h3>
+            <p>Certificate of completion · issued by Wadhwani Foundation</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+              <span class="tech-tag">Certified</span>
+              <span class="tech-tag">Wadhwani</span>
+              <span class="tech-tag">WFGlobal</span>
+            </div>
+            <a href="https://web.certificate.wfglobal.org/en/certificate?certificateId=69d4b5bed69240c3ae26830b" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="pixel-btn certificate-link" 
+               style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px;">
+              <span>🏅</span> View Certificate
+            </a>
+          </div>
+          <div class="certificate-badge badge-wadhwani">
+            <div class="badge-inner">🏆</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Robotics Training and Workshop Certificate -->
+      <div class="certificate-item cert-robotics">
+        <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h3>🤖 ROBOTICS TRAINING &amp; WORKSHOP</h3>
+            <p>Certificate of participation · robotics training and workshop</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+              <span class="tech-tag">Robotics</span>
+              <span class="tech-tag">Workshop</span>
+              <span class="tech-tag">Training</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1WF9W-3NiFC7obZXS7oX8aE5i8yXwOUl8/view?usp=sharing" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="pixel-btn certificate-link" 
+               style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px;">
+              <span>🏅</span> View Certificate
+            </a>
+          </div>
+          <div class="certificate-badge badge-robotics">
+            <div class="badge-inner">🤖</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PSITE Hackathon 2026 Certificate -->
+      <div class="certificate-item cert-hackathon">
+        <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h3>💻 PSITE HACKATHON 2026</h3>
+            <p>Certificate of participation · PSITE Hackathon 2026</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+              <span class="tech-tag">Hackathon</span>
+              <span class="tech-tag">PSITE</span>
+              <span class="tech-tag">2026</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1A5ger_Mm-PALk2hQpnf772S6oZDizGaS/view?usp=sharing" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="pixel-btn certificate-link" 
+               style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px;">
+              <span>🏅</span> View Certificate
+            </a>
+          </div>
+          <div class="certificate-badge badge-hackathon">
+            <div class="badge-inner">💻</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NC II in Computer Systems Servicing Certificate -->
+      <div class="certificate-item cert-ncii">
+        <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h3>🔧 NC II · COMPUTER SYSTEMS SERVICING</h3>
+            <p>National Certificate II · Computer Systems Servicing (CSS)</p>
+            <div style="display: flex; gap: 4px; margin-top: 6px; flex-wrap: wrap;">
+              <span class="tech-tag">NC II</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">TESDA</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1bsDayQw4g66zXpPXiR8IJhlSqJ80F3XN/view?usp=sharing" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="pixel-btn certificate-link" 
+               style="font-size:0.35rem; padding: 4px 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px;">
+              <span>🏅</span> View Certificate
+            </a>
+          </div>
+          <div class="certificate-badge badge-ncii">
+            <div class="badge-inner">🔧</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== EDUCATION SECTION ========== -->
+    <div class="pixel-card education-card" style="margin-top: 20px;">
+      <h2>🏫 EDUCATION</h2>
+      <div class="education-item">
+        <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 200px;">
+            <h3>🎓 COLLEGE OF OUR LADY OF MERCY</h3>
+            <p>Bachelor of Science in Information Technology</p>
+            <p style="color: #8a6aba;">4th Year Student · Present</p>
+            <div style="display: flex; gap: 4px; margin-top: 8px; flex-wrap: wrap;">
+              <span class="tech-tag">BSIT</span>
+              <span class="tech-tag">4th Year</span>
+              <span class="tech-tag">COLMFI</span>
+            </div>
+            <div style="margin-top: 12px;">
+              <span style="font-size: 0.5rem; color: #8a6aba;">📚 RELEVANT COURSEWORK</span>
+              <ul style="margin-top: 6px;">
+                <li>Database Management Systems</li>
+                <li>System Analysis &amp; Design</li>
+                <li>Mobile Networking &amp; Communications</li>
+                <li>Application Development</li>
+                <li>Software Engineering</li>
+                <li>Information Assurance &amp; Security</li>
+                <li>Human-Computer Interaction</li>
+                <li>Operating Systems</li>
+              </ul>
+            </div>
+          </div>
+          <div class="certificate-badge" style="background: linear-gradient(135deg, #7a5af0, #3a2aa0); box-shadow: inset -3px -3px 0 #2a1a80, inset 3px 3px 0 #b0a0f0, 0 0 20px rgba(122, 90, 240, 0.3);">
+            <div class="badge-inner">🎓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== TESTIMONIAL SECTION ========== -->
+    <div class="pixel-card testimonial-card" style="margin-top: 20px;">
+      <h2>💬 TESTIMONIAL</h2>
+      <div class="testimonial-item">
+        <p class="testimonial-quote">
+          "A dedicated and hardworking student with strong analytical skills and a genuine passion for building systems. Demonstrates excellent problem-solving ability and consistently delivers quality work."
+        </p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px; flex-wrap: wrap;">
+          <div class="certificate-badge" style="width: 48px; height: 48px; background: linear-gradient(135deg, #c8a0f0, #6a3aaa); box-shadow: inset -2px -2px 0 #4a2a7a, inset 2px 2px 0 #e0c8f8;">
+            <div class="badge-inner" style="font-size: 1rem;">👨‍🏫</div>
+          </div>
+          <div>
+            <h3 style="font-size: 0.6rem; margin-bottom: 2px;">JOSEPH JAY A. VICENTE</h3>
+            <p style="font-size: 0.45rem; color: #8a6aba;">Dean, BS Information Technology</p>
+            <p style="font-size: 0.4rem; color: #6a3aaa;">College of Our Lady of Mercy of Pulilan Foundation, Inc.</p>
+            <p style="font-size: 0.4rem; color: #6a3aaa;">jjav.colm@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <div class="pixel-card contact-card" style="margin-top: 20px;">
+      <h2>📬 CONNECT WITH ME</h2>
+      <p style="font-size: 0.55rem; color: #b090d0; margin-bottom: 14px;">
+        Open to opportunities, collaborations, and conversations. Let's build something great together.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:rommelmarcelojr@gmail.com" class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <h3>EMAIL</h3>
+            <p>rommelmarcelojr@gmail.com</p>
+          </div>
+        </a>
+        <a href="tel:+639050469726" class="contact-item">
+          <span class="contact-icon">📱</span>
+          <div>
+            <h3>PHONE</h3>
+            <p>0905 046 9726</p>
+          </div>
+        </a>
+        <a href="https://github.com/marodysis" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-icon">🐙</span>
+          <div>
+            <h3>GITHUB</h3>
+            <p>github.com/marodysis</p>
+          </div>
+        </a>
+        <a href="resume.html" target="_blank" class="contact-item resume-highlight">
+          <span class="contact-icon">📄</span>
+          <div>
+            <h3>RESUME</h3>
+            <p>View / Download CV</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Interactive Zone -->
+    <div class="interactive-area">
+      <p>
+        <span>🎮</span> click counter 
+        <span id="clickCounter">0</span>
+        <button class="pixel-btn" id="clickBtn" style="padding: 4px 14px; font-size:0.5rem;">➕</button>
+        <button class="pixel-btn" id="resetCounterBtn" style="padding: 4px 14px; font-size:0.5rem;">⟳</button>
+      </p>
+      <p>
+        <span>✨</span> <span id="greetingDisplay">hello, traveller</span>
+        <button class="pixel-btn" id="greetBtn" style="padding: 4px 14px; font-size:0.5rem;">greet</button>
+      </p>
+    </div>
+
+    <div class="footer-text">
+      <span>◈ Rommel Jr Marcelo · crafted with pixels &amp; passion ◈</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
